@@ -13,9 +13,9 @@ choose target && goto ${target}
 
 :winpe
 kernel wimboot
-initrd winpe/BCD
-initrd winpe/boot.sdi
-initrd winpe/boot.wim
+initrd ${local_address}/winpe/BCD
+initrd ${local_address}/winpe/boot.sdi
+initrd ${local_address}/winpe/boot.wim
 boot
 
 :main

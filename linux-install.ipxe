@@ -10,13 +10,13 @@ item main   Back to Main Menu
 choose target && goto ${target}
 
 :deb11-install
-kernel deb11_amd64/install/vmlinuz
-initrd deb11_amd64/install/initrd.gz
+kernel ${local_address}/deb11_amd64/install/vmlinuz
+initrd ${local_address}/deb11_amd64/install/initrd.gz
 boot
 
 :rhel8_7-install
-kernel rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
-initrd rhel8_7/initrd.img
+kernel ${local_address}/rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
+initrd ${local_address}rhel8_7/initrd.img
 
 :main
 boot ${local_address}/boot
