@@ -15,7 +15,7 @@ initrd ${local_address}/vyos/live/initrd.img
 boot
 
 :tnsr
-kernel ${local_address}/tnsr/CASPER/VMLINUZ initrd=INITRD ip=dhcp url=${local_address}/tnsr/TNSR-DVD-22.10-2-x86_64-jammy.iso
+kernel ${local_address}/tnsr/CASPER/VMLINUZ initrd=INITRD url=${local_address}/tnsr/TNSR-DVD-22.10-2-x86_64-jammy.iso
 initrd ${local_address}/tnsr/CASPER/INITRD
 boot
 
