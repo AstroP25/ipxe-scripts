@@ -18,5 +18,31 @@ initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
 boot
 
+:win10
+kernel ${local_address}/wimboot
+initrd ${local_address}/ipxe-scripts/winpe10.ini
+initrd ${lcoal_address}/ipxe-scripts/win10.bat
+initrd ${local_address}/winpe/BCD
+initrd ${local_address}/winpe/boot.sdi
+initrd ${local_address}/winpe/boot.wim
+boot
+
+:ltsc
+kernel ${local_address}/wimboot
+initrd ${local_address}/ipxe-scripts/winpeltsc.ini
+initrd ${lcoal_address}/ipxe-scripts/ltsc.bat
+initrd ${local_address}/winpe/BCD
+initrd ${local_address}/winpe/boot.sdi
+initrd ${local_address}/winpe/boot.wim
+boot
+
+kernel ${local_address}/wimboot
+initrd ${local_address}/ipxe-scripts/winpe7.ini
+initrd ${lcoal_address}/ipxe-scripts/windows7.bat
+initrd ${local_address}/winpe/BCD
+initrd ${local_address}/winpe/boot.sdi
+initrd ${local_address}/winpe/boot.wim
+boot
+
 :main
 chain ${local_address}/boot
