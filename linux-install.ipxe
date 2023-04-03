@@ -17,6 +17,7 @@ boot
 :rhel8_7-install
 kernel ${local_address}/rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
 initrd ${local_address}rhel8_7/initrd.img
+boot
 
 :main
 boot ${local_address}/boot
