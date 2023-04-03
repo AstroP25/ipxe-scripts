@@ -5,12 +5,12 @@ console --picture ${local_address}/images/Viking-logo.png
 
 menu Live images
 item deb11  Debian 11 XFCE Live Image
-item alpine   Alpine Linux Live Image
+item alpine   Alpine Linux Live Image (disk tools)
 item main   Back to Main Menu
 choose target && goto ${target}
 
 :alpine
-kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts
+kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts apkovl=${local_address}/alpine/apkovl/live.apkovl.tar.gz
 initrd ${local_address}/alpine/initramfs-lts
 boot
 
