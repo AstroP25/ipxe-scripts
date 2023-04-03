@@ -10,13 +10,12 @@ item main   Back to Main Menu
 choose target && goto ${target}
 
 :vyos
-kernel ${local_address}/vyos/live/vmlinuz initrd=initrd.img boot=live raid=noautodetect nopersistence noautologin nonetworking fetch=${lo
-cal_address}/vyos/live/filesystem.squashfs
+kernel ${local_address}/vyos/live/vmlinuz initrd=initrd.img boot=live raid=noautodetect nopersistence noautologin nonetworking fetch=${local_address}/vyos/live/filesystem.squashfs
 initrd ${local_address}/vyos/live/initrd.img
 boot
 
 :tnsr
-kernel ${local_address}/tnsr/CASPER/VMLINUZ initrd=INITRD ip=dhcp inst.repo=${local_address}/tnsr/
+kernel ${local_address}/tnsr/CASPER/VMLINUZ initrd=INITRD ip=dhcp url=${local_address}/tnsr/TNSR-DVD-22.10-x86_64-jammy.iso
 initrd ${local_address}/tnsr/CASPER/INITRD
 boot
 
