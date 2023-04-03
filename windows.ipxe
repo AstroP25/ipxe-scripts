@@ -20,7 +20,7 @@ boot
 
 :win10
 kernel ${local_address}/wimboot
-initrd ${local_address}/ipxe-scripts/winpe10.ini
+initrd ${local_address}/ipxe-scripts/winpeshl.ini
 initrd ${lcoal_address}/ipxe-scripts/win10.bat
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
