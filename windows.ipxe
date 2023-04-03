@@ -12,7 +12,7 @@ item main Back to Main Menu
 choose target && goto ${target}
 
 :winpe
-kernel wimboot
+kernel ${local_address}/wimboot
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
