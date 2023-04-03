@@ -15,8 +15,8 @@ initrd ${local_address}/deb11_amd64/install/initrd.gz
 boot
 
 :rhel8_7-install
-kernel {local_address}/rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
-initrd {local_address}rhel8_7/initrd.img
+kernel ${local_address}/rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
+initrd ${local_address}/rhel8_7/initrd.img
 boot
 
 :main
