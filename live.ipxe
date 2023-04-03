@@ -10,9 +10,9 @@ item main   Back to Main Menu
 choose target && goto ${target}
 
 :alpine
-kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/
+kernel ../alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/
 alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts
-initrd ${local_address}/alpine/initramfs-lts
+initrd ../alpine/initramfs-lts
 boot
 
 :deb11
