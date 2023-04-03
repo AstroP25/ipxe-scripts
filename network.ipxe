@@ -16,6 +16,7 @@ boot
 
 :tnsr
 kernel ${local_address}/tnsr/CASPER/VMLINUZ initrd=INITRD ip=dhcp inst.repo=${local_address}/tnsr/
+initrd ${local_address}/tnsr/CASPER/INITRD
 boot
 
 :main
