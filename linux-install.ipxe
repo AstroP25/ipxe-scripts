@@ -1,0 +1,22 @@
+#!ipxe
+
+set local_address http://172.31.2.2
+console --picture ${local_address}/images/Viking-logo.png
+
+menu Linux Installers
+item deb11-install  Debian 11 Net Install
+item rhel8_7-install  Red Hat Enterprise Linux Net Install
+item main   Back to Main Menu
+choose target && goto ${target}
+
+:deb11-install
+kernel deb11_amd64/install/vmlinuz
+initrd deb11_amd64/install/initrd.gz
+boot
+
+:rhel8_7-install
+kernel rhel8_7/vmlinuz initrd=initrd.img ip=dhcp inst.repo=${local_address}/rhel8_7/repo
+initrd rhel8_7/initrd.img
+
+:main
+boot ${local_address}/boot

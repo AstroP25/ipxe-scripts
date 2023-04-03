@@ -1,0 +1,24 @@
+#!ipxe
+
+set local_address http://172.31.2.2
+console --picture ${local_address}/images/Viking-logo.png
+
+menu Networking Images
+item vyos   Boot VyOS 1.3.x
+item tnsr   Boot TNSR Installer
+item main   Back to Main Menu
+choose target && goto ${target}
+
+:vyos
+kernel vyos/live/vmlinuz initrd=initrd.img boot=live raid=noautodetect nopersistence noautologin nonetworking fetch=${lo
+cal_address}/vyos/live/filesystem.squashfs
+initrd vyos/live/initrd.img
+boot
+
+:tnsr
+kernel tnsr/CASPER/VMLINUZ initrd=INITRD root=/dev/ram0 ip=dhcp url=${local_address}/TNSR-DVD-22.10-2-x86_64-jammy.iso
+initrd tnsr/CASPER/INITRD
+boot
+
+:main
+boot ${local_address}/boot

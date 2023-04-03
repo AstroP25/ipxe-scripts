@@ -1,0 +1,24 @@
+#!ipxe
+
+set local_address http://172.31.2.2
+console --picture ${local_address}/images/Viking-logo.png
+
+menu Live images
+item deb11  Debian 11 XFCE Live Image
+item alpine   Alpine Linux Live Image
+item main   Back to Main Menu
+choose target && goto ${target}
+
+:alpine
+kernel alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/
+alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts
+initrd alpine/initramfs-lts
+boot
+
+:deb11
+kernel deb11_amd64/live/vmlinuz initrd=initrd.img boot=live fetch=${local_address}/deb11_amd64/live/filesystem.squashfs
+initrd deb11_amd64/live/initrd.img
+boot
+
+:main
+boot ${local_address}/boot

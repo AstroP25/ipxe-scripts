@@ -1,0 +1,22 @@
+#!ipxe
+
+set local_address http://172.31.2.2
+console --picture ${local_address}/images/Viking-logo.png
+
+menu Windows Images
+item winpe  Boot WinPE
+item win10  Install Windows 10
+item ltsc   Install Windows LTSC 2021
+item win7   Install Windows 7 Ultimate
+item main Back to Main Menu
+choose target && goto ${target}
+
+:winpe
+kernel wimboot
+initrd winpe/BCD
+initrd winpe/boot.sdi
+initrd winpe/boot.wim
+boot
+
+:main
+chain ${local_address}/boot
