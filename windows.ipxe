@@ -29,7 +29,7 @@ boot
 
 :ltsc
 kernel ${local_address}/wimboot
-initrd ${local_address}/ipxe-scripts/ltsc/winpeltsc.ini
+initrd ${local_address}/ipxe-scripts/ltsc/winpeshl.ini
 initrd ${lcoal_address}/ipxe-scripts/ltsc/ltsc.bat
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
@@ -38,7 +38,7 @@ boot
 
 :win7
 kernel ${local_address}/wimboot
-initrd ${local_address}/ipxe-scripts/win7/winpe7.ini
+initrd ${local_address}/ipxe-scripts/win7/winpeshl.ini
 initrd ${lcoal_address}/ipxe-scripts/win7/windows7.bat
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
