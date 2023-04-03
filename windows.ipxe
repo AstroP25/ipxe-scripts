@@ -36,6 +36,7 @@ initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
 boot
 
+:win7
 kernel ${local_address}/wimboot
 initrd ${local_address}/ipxe-scripts/winpe7.ini
 initrd ${lcoal_address}/ipxe-scripts/windows7.bat
