@@ -6,7 +6,7 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item windows  Windows Netboot Images
+item winpe Boot WindowsPE
 item install  Linux Installers
 item live   Linux Live Images
 item network  Networking Images
@@ -32,4 +32,11 @@ kernel clonezilla/live/vmlinuz initrd=initrd.img boot=live username=user union=o
 d=on nomodeset nodmraid locals= keyboard-layout= ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=
 no net.ifnames=0 noprompt fetch=${local_address}/clonezilla/live/filesystem.squashfs
 initrd clonezilla/live/initrd.img
+boot
+
+:winpe
+kernel ${local_address}/wimboot
+initrd ${local_address}/winpe/BCD
+initrd ${local_address}/winpe/boot.sdi
+initrd ${local_address}/winpe/boot.wim
 boot
