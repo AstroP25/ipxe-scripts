@@ -37,9 +37,9 @@ boot
 
 :winpe
 kernel ${local_address}/wimboot
-initrd ${local_address}/winpe/BCD
-initrd ${local_address}/winpe/boot.sdi
-initrd ${local_address}/winpe/boot.wim
+initrd ${local_address}/winpe/BCD BCD
+initrd ${local_address}/winpe/boot.sdi  boot.sdi
+initrd ${local_address}/winpe/boot.wim  boot.wim
 boot
 
 :winpe32
