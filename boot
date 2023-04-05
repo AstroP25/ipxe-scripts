@@ -6,10 +6,11 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item winpe Boot WindowsPE
+item winpe Boot WindowsPE (64 bit)
 item install  Linux Installers
 item live   Linux Live Images
 item network  Networking Images
+item winpe32 Boot WindowsPE (32 bit)
 choose target && goto ${target}
 
 :windows
@@ -40,3 +41,9 @@ initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
 boot
+
+:winpe32
+kernel ${local_address}/wimboot
+initrd ${local_address}/winpe_x86/bcd
+initrd ${local_address}/winpe_x86/boot.sdi
+initrd ${local_address}/winpe_x86/boot.wim
