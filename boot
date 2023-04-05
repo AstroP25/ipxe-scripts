@@ -6,11 +6,11 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item winpe Boot WindowsPE (64 bit)
+item winpe Boot WindowsPE
 item install  Linux Installers
 item live   Linux Live Images
 item network  Networking Images
-item winpe32 Boot WindowsPE (32 bit)
+#item winpe32 Boot WindowsPE (32 bit)
 choose target && goto ${target}
 
 :windows
