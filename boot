@@ -10,7 +10,6 @@ item winpe Boot WindowsPE
 item install  Linux Installers
 item live   Linux Live Images
 item network  Networking Images
-item winpe32 Boot WindowsPE (32 bit)
 choose target && goto ${target}
 
 :windows
@@ -41,9 +40,3 @@ initrd ${local_address}/winpe/BCD BCD
 initrd ${local_address}/winpe/boot.sdi  boot.sdi
 initrd ${local_address}/winpe/boot.wim  boot.wim
 boot
-
-:winpe32
-kernel ${local_address}/wimboot
-initrd ${local_address}/winpe_x86/bcd bcd
-initrd ${local_address}/winpe_x86/boot.sdi  boot.sdi
-initrd ${local_address}/winpe_x86/boot.wim  boot.wim
