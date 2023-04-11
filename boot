@@ -6,7 +6,7 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item winpe Boot WindowsPE
+item windows  Windows Installers
 item install  Linux Installers
 item live   Linux Live Images
 item network  Networking Images
@@ -34,9 +34,3 @@ no net.ifnames=0 noprompt fetch=${local_address}/clonezilla/live/filesystem.squa
 initrd clonezilla/live/initrd.img
 boot
 
-:winpe
-kernel ${local_address}/wimboot
-initrd ${local_address}/winpe/BCD BCD
-initrd ${local_address}/winpe/boot.sdi  boot.sdi
-initrd ${local_address}/winpe/boot.wim  boot.wim
-boot

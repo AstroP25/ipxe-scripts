@@ -4,18 +4,26 @@ set local_address http://172.31.2.2
 console --picture ${local_address}/images/Viking-logo.png
 
 menu Windows Images
-item winpe  Boot WinPE
-item win10  Install Windows 10
-item ltsc   Install Windows LTSC 2021
+item winpe_amd64  Boot WinPE amd64
+item winpe_x86  Boot WinPE x86
+#item win10  Install Windows 10
+#item ltsc   Install Windows LTSC 2021
 #item win7   Install Windows 7 Ultimate
 item main Back to Main Menu
 choose target && goto ${target}
 
-:winpe
+:winpe_amd64
 kernel ${local_address}/wimboot
-initrd ${local_address}/winpe/BCD
-initrd ${local_address}/winpe/boot.sdi
-initrd ${local_address}/winpe/boot.wim
+initrd ${local_address}/winpe_amd64/BCD BCD
+initrd ${local_address}/winpe_amd64/boot.sdi  boot.sdi
+initrd ${local_address}/winpe_amd64/boot.wim  boot.wim
+boot
+
+:winpe_x86
+kernel ${local_address}/wimboot
+initrd ${local_address}/winpe_x86/BCD BCD
+initrd ${local_address}/winpe_x86/boot.sdi  boot.sdi
+initrd ${local_address}/winpe_x86/boot.wim  boot.wim
 boot
 
 :win10
