@@ -21,7 +21,7 @@ initrd ${local_address}/deb11_amd64/live/initrd.img
 boot
 
 :alma
-kernel ${local_address}/alma/vmlinuz0 initrd=initrd0.img boot=live rootfstype=auto ro rd.live.image quiet rhgb rd.luks=0 rd.md=0 rd.dm=0 
+kernel ${local_address}/alma/vmlinuz0 initrd=initrd0.img boot=live  
 initrd ${local_address}/alma/initrd0.img
 boot
 
