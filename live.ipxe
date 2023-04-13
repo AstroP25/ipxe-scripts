@@ -6,6 +6,7 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Live images
 item deb11  Debian 11 XFCE Live Image
 item alpine   Alpine Linux Live Image (disk tools)
+item alma	AlmaLinux 8.x
 item main   Back to Main Menu
 choose target && goto ${target}
 
@@ -17,6 +18,11 @@ boot
 :deb11
 kernel ${local_address}/deb11_amd64/live/vmlinuz initrd=initrd.img boot=live fetch=${local_address}/deb11_amd64/live/filesystem.squashfs
 initrd ${local_address}/deb11_amd64/live/initrd.img
+boot
+
+:alma
+kernel ${local_address}/alma/vmlinuz0 initrd=initrd0.img root=live rootfstype=auto ro rd.live.image quiet
+initrd ${local_address}/alma/initrd0.img
 boot
 
 :main
