@@ -28,9 +28,7 @@ boot ${script_repo}/network.ipxe
 reboot
 
 :clone
-kernel clonezilla/live/vmlinuz initrd=initrd.img boot=live username=user union=overlay config components quiet noswap ed
-d=on nomodeset nodmraid locals= keyboard-layout= ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=
-no net.ifnames=0 noprompt fetch=${local_address}/clonezilla/live/filesystem.squashfs
+kernel clonezilla/live/vmlinuz initrd=initrd.img boot=live username=user union=overlay config components quiet noswap edd=on nomodeset nodmraid locals= keyboard-layout= ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=no net.ifnames=0 noprompt fetch=${local_address}/clonezilla/live/filesystem.squashfs
 initrd clonezilla/live/initrd.img
 boot
 
