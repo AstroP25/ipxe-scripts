@@ -16,7 +16,7 @@ initrd ${local_address}/alpine/initramfs-lts
 boot
 
 :deb11
-kernel ${local_address}/deb11_amd64/live/VMLINUZ_5_10.0_22_AMD64 initrd=INITRD_IMG_5_10.0_22_AMD64 boot=live  fetch=${local_address}/deb11_amd64/live/FILESYSTEM.SQUASHFS
+kernel ${local_address}/deb11_amd64/live/VMLINUZ_5_10.0_22_AMD64 initrd=INITRD_IMG_5_10.0_22_AMD64 boot=live fetch=${local_address}/deb11_amd64/live/FILESYSTEM.SQUASHFS
 initrd ${local_address}/deb11_amd64/live/INITRD_IMG_5_10.0_22_AMD64
 boot
 
