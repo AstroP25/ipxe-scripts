@@ -6,6 +6,7 @@ console --picture ${local_address}/images/Viking-logo.png
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
+item dban Boot Dariks Boot and Nuke
 item alpine Alpine Linux base OS
 item windows  Windows Installers
 item install  Linux Installers
@@ -36,4 +37,8 @@ boot
 :alpine
 kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts
 initrd ${local_address}/alpine/initramfs-lts
+boot
+
+:dban
+kernel ${local_address/dban/dban.bzi} nuke="dwipe" silent vga=785
 boot
