@@ -40,5 +40,5 @@ initrd ${local_address}/alpine/initramfs-lts
 boot
 
 :dban
-kernel ${local_address/dban.bzi} nuke="dwipe" silent vga=785
+kernel ${local_address}/dban.bzi nuke="dwipe" silent vga=785
 boot
