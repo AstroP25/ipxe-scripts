@@ -1,0 +1,20 @@
+#!ipxe
+
+dhcp
+set local_address ${net0/gw}/tftpboot
+
+menu Boot Options
+item winpe Windows PE
+item deb11 Debian 11 Live
+
+:winpe
+kernel tftp://${local_address}/wimboot
+initrd tftp://${local_address}/winpe_amd64/BCD BCD
+initrd tftp://${local_address}/winpe_amd64/boot.sdi  boot.sdi
+initrd tftp://${local_address}/winpe_amd64/boot.wim  boot.wim
+boot
+
+:deb11
+kernel tftp://${local_address}/deb11/vmlinuz_5.10 initrd=initrd.img boot=live fetch=tftp://${local_address}/deb11_amd64/live/filesystem.squashfs
+initrd tftp://${local_address}/deb11/initrd.img
+boot
