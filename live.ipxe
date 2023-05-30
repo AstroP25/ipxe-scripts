@@ -1,7 +1,7 @@
 #!ipxe
 
 set local_address http://172.31.2.2
-console --picture ${local_address}/images/Viking-logo.png
+#console --picture ${local_address}/images/Viking-logo.png
 
 menu Live images
 item deb11  Debian 11 LXDE Live Image

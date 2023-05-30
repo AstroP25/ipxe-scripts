@@ -1,7 +1,7 @@
 #!ipxe
 
 set local_address http://172.31.2.2
-console --picture ${local_address}/images/Viking-logo.png
+#console --picture ${local_address}/images/Viking-logo.png
 
 menu Linux Installers
 item deb11-install  Debian 11 Net Install
