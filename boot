@@ -6,7 +6,7 @@ set script_repo http://172.31.2.2/ipxe-scripts
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item dban Boot Dariks Boot and Nuke
+item win98 Windows 98 Boot disk (DOS 7.1)
 item alpine Alpine Linux base OS
 item windows  Windows Installers
 item install  Linux Installers
@@ -39,6 +39,6 @@ kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs qu
 initrd ${local_address}/alpine/initramfs-lts
 boot
 
-:dban
-kernel ${local_address}/dban.bzi nuke="dwipe" silent vga=785
+:win98
+sanboot ${local_address}/Win98_boot.img
 boot
