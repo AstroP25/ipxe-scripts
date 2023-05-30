@@ -40,4 +40,6 @@ initrd ${local_address}/alpine/initramfs-lts
 boot
 
 :win98
-sanboot ${local_address}/Win98_boot.img
+kernel ${local_address}/memdisk.ld
+initrd ${local_address}/Win98_boot.img
+boot
