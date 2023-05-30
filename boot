@@ -42,5 +42,5 @@ boot
 :win98
 kernel ${local_address}/memdisk
 initrd ${local_address}/Win98_boot.img
-imgargs memdisk raw
+imgargs memdisk iso raw
 boot
