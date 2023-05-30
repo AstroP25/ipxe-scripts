@@ -6,7 +6,7 @@ set script_repo http://172.31.2.2/ipxe-scripts
 menu Network Boot Menu
 item exit Reboot
 item clone  Boot Clonezilla
-item win98 Windows 98 Boot disk (DOS 7.1)
+item dban DBAN
 item alpine Alpine Linux base OS
 item windows  Windows Installers
 item install  Linux Installers
@@ -39,8 +39,5 @@ kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs qu
 initrd ${local_address}/alpine/initramfs-lts
 boot
 
-:win98
-kernel ${local_address}/memdisk
-initrd ${local_address}/Win98_boot.img
-imgargs memdisk iso raw
-boot
+:dban
+sanboot ${local_address}/dban-2.3.0_i586.iso
