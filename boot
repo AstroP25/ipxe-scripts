@@ -41,4 +41,3 @@ boot
 
 :win98
 sanboot ${local_address}/Win98_boot.img
-boot
