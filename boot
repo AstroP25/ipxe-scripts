@@ -1,7 +1,7 @@
 #!ipxe
 set local_address http://172.31.2.2
 set script_repo http://172.31.2.2/ipxe-scripts
-console --picture ${local_address}/images/Viking-logo.png
+#console --picture ${local_address}/images/Viking-logo.png
 
 menu Network Boot Menu
 item exit Reboot
