@@ -7,7 +7,7 @@ menu Windows Images
 item winpe_amd64  Boot WinPE amd64
 item winpe_x86  Boot WinPE x86
 #item win10  Install Windows 10
-#item ltsc   Install Windows LTSC 2021
+item ltsc   Install Windows LTSC 2021
 #item win7   Install Windows 7 Ultimate
 item main Back to Main Menu
 choose target && goto ${target}
