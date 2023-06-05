@@ -37,11 +37,12 @@ boot
 
 :ltsc
 kernel ${local_address}/wimboot
+initrd ${lcoal_address}/ipxe-scripts/ltsc/ltsc.bat ltsc.bat
+initrd ${local_address}/ipxe-scripts/ltsc/winpeshl.ini winpeshl.ini
 initrd ${local_address}/winpe/BCD BCD
 initrd ${local_address}/winpe/boot.sdi boot.sdi
 initrd ${local_address}/winpe/boot.wim boot.wim
-initrd ${local_address}/ipxe-scripts/ltsc/winpeshl.ini winpeshl.ini
-initrd ${lcoal_address}/ipxe-scripts/ltsc/ltsc.bat ltsc.bat
+
 boot
 
 :win7
