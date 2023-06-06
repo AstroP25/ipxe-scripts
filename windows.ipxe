@@ -9,6 +9,7 @@ item winpe_x86  Boot WinPE x86
 #item win10  Install Windows 10
 item ltsc   Install Windows LTSC 2021
 #item win7   Install Windows 7 Ultimate
+item dos    Boot DOS 7.1 (Windows 98 boot disk)
 item main Back to Main Menu
 choose target && goto ${target}
 
@@ -29,7 +30,7 @@ boot
 :win10
 kernel ${local_address}/wimboot
 initrd ${local_address}/ipxe-scripts/win10/winpeshl.ini
-initrd ${lcoal_address}/ipxe-scripts/win10/win10.bat
+initrd ${local_address}/ipxe-scripts/win10/win10.bat
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
@@ -37,22 +38,24 @@ boot
 
 :ltsc
 kernel ${local_address}/wimboot
-initrd ${lcoal_address}/ipxe-scripts/ltsc/ltsc.bat  ltsc.bat
+initrd ${local_address}/ipxe-scripts/ltsc/ltsc.bat  ltsc.bat
 initrd ${local_address}/ipxe-scripts/ltsc/winpeshl.ini  winpeshl.ini
 initrd ${local_address}/winpe_amd64/BCD   BCD
 initrd ${local_address}/winpe_amd64/boot.sdi  boot.sdi
 initrd ${local_address}/winpe_amd64/boot.wim  boot.wim
-
 boot
 
 :win7
 kernel ${local_address}/wimboot
 initrd ${local_address}/ipxe-scripts/win7/winpeshl.ini
-initrd ${lcoal_address}/ipxe-scripts/win7/windows7.bat
+initrd ${local_address}/ipxe-scripts/win7/windows7.bat
 initrd ${local_address}/winpe/BCD
 initrd ${local_address}/winpe/boot.sdi
 initrd ${local_address}/winpe/boot.wim
 boot
+
+:dos
+sanboot --drive 0x00 ${local_address}/Win98_boot.img
 
 :main
 chain ${local_address}/boot
