@@ -35,7 +35,7 @@ initrd ${local_address}/clonezilla/live/initrd.img
 boot
 
 :alpine
-kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/alpine/v3.17/main modloop=${local_address}/alpine/modloop-lts
+kernel ${local_address}/alpine/vmlinuz-lts console=tty0 modules=loop,squashfs quiet nomodeset alpine_repo=https://dl-cdn.alpinelinux.org/alpine/latest-stable/main modloop=${local_address}/alpine/modloop-lts
 initrd ${local_address}/alpine/initramfs-lts
 boot
 
